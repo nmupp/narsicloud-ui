@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "webpack --mode=development",
     "start": "nodemon ./server.js"
   },
   "devDependencies": {
@@ -15,6 +16,8 @@
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.3",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
   }
 }
