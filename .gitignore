@@ -4,3 +4,7 @@
 node_modules/*
 
 *.iml
+
+dist/narsicloud.bundle.js
+
+dist/narsicloud.bundle.js.map
