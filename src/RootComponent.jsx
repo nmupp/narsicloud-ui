@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from './Home.jsx'
 
-const AppRoot = () => {
+const RootComponent = () => {
     return (
         <Router>
             <Route path="/" component={Home}/>
@@ -10,4 +10,4 @@ const AppRoot = () => {
     )
 }
 
-export default AppRoot
+export default RootComponent

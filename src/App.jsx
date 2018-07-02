@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import AppRoot from './AppRoot.jsx'
+import RootComponent from './RootComponent.jsx'
 
-ReactDOM.render(<AppRoot/>, document.querySelector('.app'))
+ReactDOM.render(<RootComponent/>, document.querySelector('.app'))
