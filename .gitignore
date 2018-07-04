@@ -8,3 +8,7 @@ node_modules/*
 dist/narsicloud.bundle.js
 
 dist/narsicloud.bundle.js.map
+
+dist/main.js
+
+dist/vendor.js

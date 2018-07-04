@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const configMap = {
-    'development': () => {
+    development: () => {
         baseConfig.plugins = [
             new webpack.DefinePlugin({
                 "process.env.NODE_ENV": JSON.stringify("development")
@@ -12,14 +12,28 @@ const configMap = {
         baseConfig.devtool = "source-map"
         return baseConfig
     },
-    'production': () => {
-        baseConfig.plugins = [
-            new UglifyJsPlugin(),
-            new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
-            new webpack.optimize.ModuleConcatenationPlugin(),
-            new webpack.NoEmitOnErrorsPlugin()
-        ]
-        return baseConfig
+    production: () => {
+        const config = {
+            plugins: [
+                new UglifyJsPlugin(),
+                new webpack.DefinePlugin({"process.env.NODE_ENV": JSON.stringify("production")}),
+                new webpack.optimize.ModuleConcatenationPlugin(),
+                new webpack.NoEmitOnErrorsPlugin()
+            ],
+            optimization: {
+                minimize: true,
+                splitChunks: {
+                    cacheGroups: {
+                        commons: {
+                            test: /[\\/]node_modules[\\/]/,
+                            name: 'vendor',
+                            chunks: 'all'
+                        },
+                    },
+                },
+            },
+        }
+        return Object.assign(baseConfig, config)
     }
 }
 
