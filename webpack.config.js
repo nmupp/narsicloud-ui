@@ -1,21 +1,12 @@
-const path = require('path');
-
-module.exports = {
-    entry: './src/App.jsx',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'narsicloud.bundle.js'
+const configMap = {
+    'development': () => {
+        return require('./webpack.development.config')
     },
-    devtool: 'source-map',
-    module: {
-        rules: [
-            {
-                test: /\.jsx$/,
-                loader: 'babel-loader'
-            }
-        ]
-    },
-    resolve: {
-        extensions: ['.js','.jsx']
+    'production': () => {
+        return require('./webpack.production.config')
     }
-};
+}
+
+module.exports = (env, argv) => {
+    return configMap[argv.mode]()
+}
