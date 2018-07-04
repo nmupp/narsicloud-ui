@@ -6,6 +6,10 @@
     "prod": "webpack --mode=production && nodemon ./server.js",
     "dev": "webpack --mode=development && nodemon ./server.js"
   },
+  "dependencies": {
+    "express": "~4.16.0",
+    "nodemon": "^1.17.3"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -17,12 +21,10 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "^2.5.8",
-    "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.0",
-    "nodemon": "^1.17.3",
     "pug": "^2.0.3",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
