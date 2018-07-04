@@ -1,25 +1,25 @@
-const devConfig = require('./webpack.development.config')
+const baseConfig = require('./webpack.base.config')
 const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const configMap = {
     'development': () => {
-        devConfig.plugins = [
+        baseConfig.plugins = [
             new webpack.DefinePlugin({
                 "process.env.NODE_ENV": JSON.stringify("development")
             })
         ]
-        devConfig.devtool = "source-map"
-        return devConfig
+        baseConfig.devtool = "source-map"
+        return baseConfig
     },
     'production': () => {
-        devConfig.plugins = [
+        baseConfig.plugins = [
             new UglifyJsPlugin(),
             new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
             new webpack.optimize.ModuleConcatenationPlugin(),
             new webpack.NoEmitOnErrorsPlugin()
         ]
-        return devConfig
+        return baseConfig
     }
 }
 

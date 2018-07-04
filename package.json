@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prod": "webpack --mode=production",
-    "build": "webpack --mode=development",
-    "start": "npm run prod && nodemon ./server.js"
+    "prod": "webpack --mode=production && nodemon ./server.js",
+    "dev": "webpack --mode=development && nodemon ./server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
