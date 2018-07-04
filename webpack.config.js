@@ -4,13 +4,16 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const configMap = {
     development: () => {
-        baseConfig.plugins = [
-            new webpack.DefinePlugin({
-                "process.env.NODE_ENV": JSON.stringify("development")
-            })
-        ]
-        baseConfig.devtool = "source-map"
-        return baseConfig
+        const config = {
+            plugins : [
+                new webpack.DefinePlugin({
+                    "process.env.NODE_ENV": JSON.stringify("development")
+                })
+            ],
+            devtool: "cheap-module-inline-source-map",
+            mode: "development"
+        }
+        return Object.assign(baseConfig, config)
     },
     production: () => {
         const config = {
