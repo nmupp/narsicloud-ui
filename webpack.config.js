@@ -20,18 +20,6 @@ const configMap = {
                 new webpack.optimize.ModuleConcatenationPlugin(),
                 new webpack.NoEmitOnErrorsPlugin()
             ],
-            optimization: {
-                minimize: true,
-                splitChunks: {
-                    cacheGroups: {
-                        commons: {
-                            test: /[\\/]node_modules[\\/]/,
-                            name: 'vendor',
-                            chunks: 'all'
-                        },
-                    },
-                },
-            },
         }
         return Object.assign(baseConfig, config)
     }

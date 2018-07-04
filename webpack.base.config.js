@@ -14,6 +14,18 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        minimize: true,
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                },
+            },
+        },
+    },
     resolve: {
         extensions: ['.js','.jsx']
     }
