@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <strong>Welcome narsicloud excellent!!!</strong>
-            <Image src="/dist/assets/mypic.jpeg" responsive={true}/>
+            <Image src="./assets/mypic.jpeg" responsive={true}/>
         </div>
     )
 }

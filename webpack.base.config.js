@@ -1,17 +1,32 @@
-const path = require('path');
-
 module.exports = {
-    entry: './src/App',
+    entry: {
+        app: './src/App',
+        html: './src/index.html',
+        image: './src/assets/mypic.jpeg'
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        path: __dirname + '/dist',
+        filename: '[name].js'
     },
     module: {
         rules: [
             {
-                test: /\.jsx$/,
-                loader: 'babel-loader'
-            }
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                loaders: ['babel-loader']
+            },
+            {
+                test: /\.html$/,
+                loader: "file-loader?name=[name].[ext]",
+            },
+            {
+                test: /\.jpeg$/,
+                loader: "file-loader",
+                options: {
+                    name:'[name].[ext]',
+                    outputPath: 'assets/'
+                }
+            },
         ]
     },
     optimization: {
