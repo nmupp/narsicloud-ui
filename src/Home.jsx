@@ -1,13 +1,16 @@
 import React from 'react'
-import {Image} from 'react-bootstrap'
+import Button from '@material-ui/core/Button'
+import { withTheme } from '@material-ui/core/styles';
 
 const Home = () => {
     return (
         <div>
-            <strong>Welcome narsicloud excellent!!!</strong>
-            <Image src="./assets/mypic.jpeg" responsive={true}/>
+            <strong>Welcome narsicloud excellent123!!!</strong>
+            <Button variant="contained" color="primary">
+                Hello World123!!
+            </Button>
         </div>
     )
 }
 
-export default Home
+export default withTheme()(Home)

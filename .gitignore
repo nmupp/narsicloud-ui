@@ -12,3 +12,5 @@ dist/narsicloud.bundle.js.map
 dist/main.js
 
 dist/vendor.js
+package-lock.json
+.gitignore
