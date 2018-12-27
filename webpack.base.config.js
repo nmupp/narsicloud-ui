@@ -2,7 +2,7 @@ module.exports = {
     entry: {
         app: './src/App',
         html: './src/index.html',
-        image: './src/assets/mypic.jpeg'
+        image: './src/assets/java.jpeg'
     },
     output: {
         path: __dirname + '/dist',
