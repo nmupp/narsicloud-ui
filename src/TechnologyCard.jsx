@@ -54,10 +54,11 @@ class TechnologyCard extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, technology } = this.props;
+    const imagePath = `/assets/${technology}.jpeg`
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} raised={true} style={{marginTop: '10px'}}>
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar}>
@@ -74,7 +75,7 @@ class TechnologyCard extends React.Component {
         />
         <CardMedia
           className={classes.media}
-          image="assets/java.jpeg"
+          image={imagePath}
           title="Paella dish"
         />
         <CardContent>

@@ -1,11 +1,12 @@
+const path = require("path")
+
 module.exports = {
     entry: {
         app: './src/App',
-        html: './src/index.html',
-        image: './src/assets/java.jpeg'
+        html: './src/index.html'
     },
     output: {
-        path: __dirname + '/dist',
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
     },
     module: {
@@ -20,12 +21,8 @@ module.exports = {
                 loader: "file-loader?name=[name].[ext]",
             },
             {
-                test: /\.jpeg$/,
-                loader: "file-loader",
-                options: {
-                    name:'[name].[ext]',
-                    outputPath: 'assets/'
-                }
+                test: /\.(png|svg|jpeg|jpg|gif)$/,
+                loader: "file-loader?name=assets/[name].[ext]"
             },
         ]
     },

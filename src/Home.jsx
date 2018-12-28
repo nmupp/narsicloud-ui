@@ -18,6 +18,8 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import TechnologyCard from './TechnologyCard';
 
+const technologies = ['aws','java','scala','bigdata','salesforce','react']
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -215,11 +217,10 @@ class Home extends React.Component {
         </AppBar>
         {renderMenu}
         {renderMobileMenu}
-        <div style={{display : 'flex', justifyContent: 'space-between', paddingTop: '5px', flexDirection: 'row',
-  flexWrap: 'wrap'}}>
+        <div style={{display : 'flex', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap'}}>
            {
-               [0,1,2,3,4,5].map(n => {
-                  return <TechnologyCard key={n}/>
+               technologies.map(tech => {
+                  return <TechnologyCard key={tech} technology={tech}/>
                })
            }
         </div>
